@@ -1,6 +1,6 @@
 <?php // Load and parse the XML document 
 
-$rss =  @simplexml_load_file("https://jinrss.us-south.cf.appdomain.cloud/?id=http://rssmix.com/u/13072679/rss.xml");
+$rss =  @simplexml_load_file("http://rssmix.com/u/13072679/rss.xml");
 
 
 
