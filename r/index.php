@@ -1,6 +1,6 @@
 <?php // Load and parse the XML document 
 
-$rss =  @simplexml_load_file("http://rssmix.com/u/13072679/rss.xml");
+$rss =  @simplexml_load_file("http://rssmix.com/u/13211438/rss.xml");
 
 
 
@@ -204,7 +204,7 @@ function ClickMenu(diving) {
 
             </div>
             <div id="timeShow" class="time1" style="color:#1a2a3a;width:100%;float:left;text-align: center;"><p></div>
-            <div class="proxy" style="color:#1a2a3a;width:100%;    margin: 0 0 0 0;text-align: center;"><?php echo "<a href=\"https://p.zzhsxy.workers.dev/http/webrss.jinjiuling.tk/?id=" . $id . "\">"."🌏"."</a>"; ?> <?php echo "<a href=\"https://p.jinjiuling.tk/-----http://webrss.jinjiuling.tk/?id=" . $id . "\">"."代理"."</a>"; ?><a style="outline:none;" onclick="ClickMenu('hiden')">🌏</a></div>
+            <div class="proxy" style="color:#1a2a3a;width:100%;    margin: 0 0 0 0;text-align: center;"><?php echo "<a href=\"https://p.zzhsxy.workers.dev/\">"."🌏"."</a>"; ?> <?php echo "<a href=\"https://p.jinjiuling.tk/-----/\">"."代理"."</a>"; ?><a style="outline:none;" onclick="ClickMenu('hiden')">🌏</a></div>
 
         </div>
         <div id="add" style="<?php if ($rss == true) { echo "display:none;"; } ?>z-index:999999; text-align: center">
