@@ -1,28 +1,25 @@
-<?php 
-$id=$_GET['id'];
-$rss =  @simplexml_load_file($id);
-if ($rss == true) {
-preg_match_all ("/:\/\/(.*?)\//", $id, $n);
-$x=str_replace($n[0][0],"",$id);
-$re=str_replace("/","",$x);
-$er=str_replace("http","",$re);
-$ter=$n[1][0].$er;
-$ters=str_replace(".","",$ter);
-$d=file_get_contents($ters.".txt");
-for ($i=0;$i<count($rss->channel->item);$i++){
-	$k.= strtotime($rss->channel->item[$i]->pubDate);
-               $h=str_split($k,10);
-}
-$newArr = array();
-foreach($h as $vo){
-if($vo>$d)$newArr[] =$vo;	
-}
-$l.=count($newArr);
-$data=array(data=>array(num=>$l));
-echo json_encode($data);
-$last= strtotime($rss->channel->item->pubDate);
-file_put_contents($ters.".txt",$last);
-} else {
-echo json_encode(array(data=>array(num=>-1)));
-}
+<?php
+$id=$_GET[id];
+$url = "https://www.huya.com/".$id;
+$ch = curl_init(); 
+curl_setopt($ch, CURLOPT_URL, $url); 
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE); 
+curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE); 
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); 
+curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true); 
+$re = curl_exec($ch); 
+$re = htmlspecialchars($re);
+curl_close($ch);
+preg_match('|stream&quot;: &quot;(.*?)&quot;        };|i',$re,$play);
+$play = base64_decode($play[1]);
+preg_match('|sStreamName":"(.*?)","|i',$play,$name);
+preg_match('|m3u8","sHlsAntiCode":"(.*?)","|i',$play,$pam);
+$pam = str_replace("&amp;","&",$pam[1]);
+//$playurl = "http://121.12.115.15/txdirect.flv.huya.com/src/".$name[1].".m3u8";
+//$playurl = "http://0d6e0ab7f6b628dc024bfbffd1dc637a.v.smtcdns.net/tx.hls.huya.com/src/".$name[1]."_4000.m3u8";
+$playurl = "http://121.12.115.156/tx.hls.huya.com/src/".$name[1]."_4000.m3u8";
+
+//header('Location:'.$playurl);
+//echo $name[1]."_4000.m3u8".$pam;
+echo $playurl;
 ?>
