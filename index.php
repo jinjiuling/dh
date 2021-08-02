@@ -1,6 +1,6 @@
 <?php
-$id=$_GET[id];
-$url = "https://www.huya.com/".$id;
+
+$url = "https://www.huya.com/11342412";
 $ch = curl_init(); 
 curl_setopt($ch, CURLOPT_URL, $url); 
 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE); 
