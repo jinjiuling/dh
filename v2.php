@@ -20,3 +20,4 @@ $link1.PHP_EOL;
 file_put_contents("1v2",$link);
 $link2=base64_encode(file_get_contents('1v2'));
 file_put_contents("v2",$link2);
+echo $link2;
