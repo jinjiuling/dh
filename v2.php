@@ -1,4 +1,5 @@
 <?php
+require __DIR__ . '/api/index.php';
 $source=$_GET['source'];
 $source=str_replace("vmess://","",$source);
 if ($_GET['source']==false){$source="ew0KICAidiI6ICIyIiwNCiAgInBzIjogImdpdGh1Yi5jb20vZnJlZWZxIC0g576O5Zu9Q2xvdWRGbGFyZeiKgueCuSA0MiIsDQogICJhZGQiOiAiMTcyLjY3LjY5LjM2IiwNCiAgInBvcnQiOiAiNDQzIiwNCiAgImlkIjogImUyNmU4ZTU2LTZhZjYtZmUyMi1kMWVkLTkyNjY1MGI4OWM3NiIsDQogICJhaWQiOiAiMCIsDQogICJuZXQiOiAid3MiLA0KICAidHlwZSI6ICJub25lIiwNCiAgImhvc3QiOiAibnNhd3NyYi5tb29uY2xvdWQuYmlrZSIsDQogICJwYXRoIjogIi9mb2tmdndzIiwNCiAgInRscyI6ICJ0bHMiDQp9";echo "已使用默认配置";}
