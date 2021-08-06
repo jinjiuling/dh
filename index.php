@@ -1,5 +1,5 @@
 <?php
-
+require __DIR__ . '/gethtml.php';
 $title_find[0]=$link_find[0]=$des_find[0]='#/[\x00-\x08\x0b-\x0c\x0e-\x1f]/s#';
 $title_replace[0]=$link_replace[0]=$des_replace[0]='';
 $footer='</channel></rss>';
