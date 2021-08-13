@@ -19,7 +19,7 @@ if($_POST['submit']){
     $fh = fopen('./v2ip.php',"w");
     //写入内容
     if($fh){
-        $length = fwrite($fh,"<?php\n \$name=array(\n".$_POST['name'].");\n\$list=array(\n".$_POST['link'].");\n");
+        $length = fwrite($fh,"<?php\n \$ip=array(\n".$_POST['name'].");\n");
         if($length){
             echo '写入成功';
         }else{
