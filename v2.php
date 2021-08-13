@@ -1,5 +1,5 @@
 <?php
-require __DIR__ . '/api/index.php';
+
 $source=$_GET['source'];
 $source=str_replace("vmess://","",$source);
 if ($_GET['source']==false){$source="ew0KICAidiI6ICIyIiwNCiAgInBzIjogImdpdGh1Yi5jb20vZnJlZWZxIC0g576O5Zu9Q2xvdWRGbGFyZeiKgueCuSA0MiIsDQogICJhZGQiOiAiMTcyLjY3LjY5LjM2IiwNCiAgInBvcnQiOiAiNDQzIiwNCiAgImlkIjogImUyNmU4ZTU2LTZhZjYtZmUyMi1kMWVkLTkyNjY1MGI4OWM3NiIsDQogICJhaWQiOiAiMCIsDQogICJuZXQiOiAid3MiLA0KICAidHlwZSI6ICJub25lIiwNCiAgImhvc3QiOiAibnNhd3NyYi5tb29uY2xvdWQuYmlrZSIsDQogICJwYXRoIjogIi9mb2tmdndzIiwNCiAgInRscyI6ICJ0bHMiDQp9";echo "已使用默认配置";}
@@ -8,7 +8,7 @@ include'v2ip.php';
 //echo $source;
 $source=base64_decode($source);
 $json=json_decode($source, true);
-for ($i=1;$i<11;$i++){
+for ($i=0;$i<conut($ip);$i++){
 $json[ps]="cf-".$i;
 $json[add]=$ip[$i];
 $unjson=json_encode($json);
