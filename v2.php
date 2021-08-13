@@ -8,8 +8,8 @@ include'v2ip.php';
 //echo $source;
 $source=base64_decode($source);
 $json=json_decode($source, true);
-for ($i=0;$i<conut($ip);$i++){
-echo $json[ps]="cf-".$i;
+for ($i=0;$i<count($ip);$i++){
+$json[ps]="cf-".$i;
 $json[add]=$ip[$i];
 $unjson=json_encode($json);
 $base=base64_encode($unjson);
