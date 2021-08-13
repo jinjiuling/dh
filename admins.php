@@ -9,7 +9,7 @@ setcookie("isview",$_POST["pwd"],time()+3600*3);$isview = true;}else{$p = (empty
 <?php if($isview){?>
 <!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <title>管理</title>
-<style type="text/css">body{background:none;}</style>
+    <style type="text/css">body{background:none;}h{text-align: center;font-size: 50px;}from{text-align: center;}textarea{height: 171px; border-radius: 15px; border: none;background: rgb(250, 250, 250); outline: none; margin: 0px;padding: 20px; box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);}</style>
 </head><body>
 <div class="passport"><div class="layui-textarea -block">
 <?php
@@ -33,10 +33,11 @@ if($_POST['submit']){
 
 ?>
 <h3>IP</h3>
+    <div style="text-align: center;">
 <textarea  name="name"  class="layui-textarea " form="usrform" rows="10" cols="100" style="height:40%"><?php include'v2ip.php';for ($i=0;$i<count($ip);$i++){echo "'".$ip[$i]."',\n";}?>
 </textarea>
-
-<form id="usrform" action = '' method = 'post'>
+</div>
+<form id="usrform" action = '' method = 'post' style="text-align: center;">
   <input type="submit" name="submit">
 </form>
 <br>
