@@ -1,5 +1,5 @@
 <?php //输入密码后访问本页内容
-$password = "3210";//这里是密码 
+$password = "371202";//这里是密码 
 $p = "";if(isset($_COOKIE["isview"]) and $_COOKIE["isview"] == $password){ 
 $isview = true;}else{ 
 if(isset($_POST["pwd"])){ 
