@@ -16,7 +16,7 @@ setcookie("isview",$_POST["pwd"],time()+3600*3);$isview = true;}else{$p = (empty
 
 if($_POST['submit']){
     //打开文件
-    $fh = fopen('./list.php',"w");
+    $fh = fopen('./v2ip.php',"w");
     //写入内容
     if($fh){
         $length = fwrite($fh,"<?php\n \$name=array(\n".$_POST['name'].");\n\$list=array(\n".$_POST['link'].");\n");
