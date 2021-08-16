@@ -19,6 +19,6 @@ for ($i=$s;$i<$e;$i++){
 //echo $html2[data][lis][$i][chapterId];
 $time=date('D, d F Y h:i:s',strtotime("+".$i. "minute"));
 
-$rss.="<item>\n\t<title><![CDATA[".$i.$html2[data][lis][$i][chapterTitle]."]]></title>\n\t<link><![CDATA[http://tb.jinjiuling.tk/tingchina/zxjx.php?id=".$html2[data][lis][$i][chapterId]."]]></link>\n\t<description><![CDATA[<img src=\"http://fdfs.xmcdn.com/group20/M03/E2/EC/wKgJJ1fOJO3jH0VwAAI0dJM0ztI964_web_large.jpg\">]]></description>\n\t<enclosure url=\"http://tb.jinjiuling.tk/tingchina/zxjx.php?id=".$html2[data][lis][$i][chapterId]."\" type=\"audio/mp3\" length=\"1\"/>\n\t<pubDate>$time GMT</pubDate>\n</item>\n";
+$rss.="<item>\n\t<title><![CDATA[".$i.$html2[data][lis][$i][chapterTitle]."]]></title>\n\t<link><![CDATA[https://imgpro.eu-gb.cf.appdomain.cloud/zxjx.php?id=".$html2[data][lis][$i][chapterId]."]]></link>\n\t<description><![CDATA[<img src=\"http://fdfs.xmcdn.com/group20/M03/E2/EC/wKgJJ1fOJO3jH0VwAAI0dJM0ztI964_web_large.jpg\">]]></description>\n\t<enclosure url=\"https://imgpro.eu-gb.cf.appdomain.cloud/zxjx.php?id=".$html2[data][lis][$i][chapterId]."\" type=\"audio/mp3\" length=\"1\"/>\n\t<pubDate>$time GMT</pubDate>\n</item>\n";
 }
 file_put_contents('zx1.xml',$header.$rss.$footer);
