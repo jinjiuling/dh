@@ -4,14 +4,9 @@ include'gethtml.php';
  if (strpos($url, 'torrent')){$magnet1=$url;}else{
 $html=gethtml($url);
 preg_match('|href="magnet(.*?)"|i',$html,$magnet);
-//print_r($magnet);
-
-
 $magnet=str_replace('href="','',$magnet[0]);
 $magnet=str_replace('"','',$magnet);
-}
-
-?>
+}?>
 <!doctype html>
 <html>
 
@@ -20,36 +15,7 @@ $magnet=str_replace('"','',$magnet);
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta content="ie=edge" http-equiv="x-ua-compatible">
-    <style>
-        html, body {
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            width: 100%;
-            height: 100%;
-        }
-        #player {
-            height: 100%;
-        }
-        #controls {
-            padding: 1rem;
-        }
-        #controls i {
-            padding-top: 0.3rem;
-            display: block;
-        }
-        .control {
-            padding-right: 1rem;
-        }
-        #files {
-            padding: 0.5rem;
-        }
-        #files a {
-            padding: 0.5rem;
-        }
-    </style>
 </head>
-
 <body>
     <div id="player"></div>
     <div id="files"></div> 
@@ -66,17 +32,6 @@ $magnet=str_replace('"','',$magnet);
             height: '100%',
             features: {
                 continue:    false,
-                // title:       false,
-                // p2pProgress: false,
-                // subtitles:   false,
-                // settings:    false,
-                // fullscreen:  false,
-                // playpause:   false,
-                // currentTime: false,
-                // timeline:    false,
-                // duration:    false,
-                // volume:      false,
-                // chromecast:  false,
             },
             on: function(e) {
                 if (e.name == window.webtor.TORRENT_FETCHED) {
